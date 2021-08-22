@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <SitePartDef>
+    <defName>PlaceOfVision</defName>
+    <label>place of vision</label>
+    <description>The place your pawns have seen in their vision.</description>
+    <workerClass>Corruption.Worship.Quests.SitePartWorker_Pilgrimage</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/PlaceOfPilgrimage</expandingIconTexture>
+    <forceExitAndRemoveMapCountdownDurationDays>16</forceExitAndRemoveMapCountdownDurationDays>
+    <increasesPopulation>false</increasesPopulation>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <tags>
+      <li>PlaceOfVision</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>PlaceOfVision</defName>
+    <linkWithSite>PlaceOfVision</linkWithSite>
+    <order>480</order>
+    <genStep Class="Corruption.Worship.Quests.GenStep_AncientGrave">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

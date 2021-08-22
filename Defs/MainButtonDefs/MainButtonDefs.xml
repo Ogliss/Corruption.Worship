@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MainButtonDef>
+    <defName>Worship</defName>
+    <label>worship</label>
+    <description>Additional content from the Corruption mod.</description>
+    <tabWindowClass>Corruption.Worship.MainTabWindow_Worship</tabWindowClass>
+    <canBeTutorDenied>false</canBeTutorDenied>
+    <order>100</order>
+    <validWithoutMap>true</validWithoutMap>
+    <minimized>True</minimized>
+    <iconPath>UI/Buttons/MainButtons/Worship</iconPath>
+  </MainButtonDef>
+</Defs>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--================================ Garden of Nurgle ======================================-->
+
+  <ThingDef ParentName="PlantBase" Name="NonSowableTree" Abstract="True">
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0.8</Flammability>
+      <Nutrition>1.7</Nutrition>
+    </statBases>
+    <altitudeLayer>Building</altitudeLayer>
+    <selectable>true</selectable>
+    <fillPercent>0.25</fillPercent>
+    <graphicData>
+      <shadowData>
+        <volume>(0.2, 0.35, 0.13)</volume>
+        <offset>(0,0,-0.42)</offset>
+      </shadowData>
+    </graphicData>
+    <passability>PassThroughOnly</passability>
+    <pathCost>130</pathCost>
+    <blockWind>true</blockWind>
+    <ingestible>
+      <foodType>Tree</foodType>
+      <preferability>RawBad</preferability>
+    </ingestible>
+    <plant>
+      <lifespanDaysPerGrowDays>9</lifespanDaysPerGrowDays>
+      <fertilitySensitivity>0.05</fertilitySensitivity>
+      <soundHarvesting>Harvest_Tree</soundHarvesting>
+      <soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
+      <mustBeWildToSow>true</mustBeWildToSow>
+      <harvestWork>800</harvestWork>
+      <harvestedThingDef>WoodLog</harvestedThingDef>
+      <harvestYield>25</harvestYield>
+      <harvestTag>Wood</harvestTag>
+      <harvestMinGrowth>0.40</harvestMinGrowth>
+      <harvestFailable>false</harvestFailable>
+      <blockAdjacentSow>true</blockAdjacentSow>
+      <sowTags>
+      </sowTags>
+      <visualSizeRange>1.3~2.0</visualSizeRange>
+      <topWindExposure>0.25</topWindExposure>
+      <wildClusterRadius>8</wildClusterRadius>
+      <wildClusterWeight>24</wildClusterWeight>
+      <wildOrder>3</wildOrder>
+      <interferesWithRoof>true</interferesWithRoof>
+    </plant>
+  </ThingDef>
+  
+  
+  
+  <ThingDef ParentName="NonSowableTree">
+    <defName>Plant_FeculentGnarlmaw</defName>
+    <thingClass>Corruption.Core.Plant_Nurgle</thingClass>
+    <label>feculent gnarlmaw</label>
+    <description>A twisted abomination of a tree, sprouting vile growths and emitting foul odours. Tentacles are growing out of its top, capable of striking anyone nearby.</description>
+    <graphicData>
+      <texPath>Things/Plants/TreeOfNurgle</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shadowData>
+        <volume>(0.2, 0.35, 0.13)</volume>
+        <offset>(-0.03,0,-0.44)</offset>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <Beauty>2</Beauty>
+      <MaxHitPoints>240</MaxHitPoints>
+    </statBases>
+    <plant>
+      <growDays>13</growDays>
+      <leaflessGraphicPath>Things/Plants/TreeOfNurgle</leaflessGraphicPath>
+      <harvestWork>2400</harvestWork>
+      <harvestYield>10</harvestYield>
+      <wildClusterWeight>0</wildClusterWeight>
+      <neverBlightable>true</neverBlightable>
+      <harvestedThingDef>FruitOfNurgle</harvestedThingDef>
+    </plant>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(127,170,45,0)</glowColor>
+      </li>
+      <li Class="Corruption.Worship.CompProperties_Shrine">
+        <compClass>Corruption.Worship.CompShrine</compClass>
+        <dedicatedTo>
+          <li>Nurgle</li>          
+        </dedicatedTo>
+        <requiresEffigy>false</requiresEffigy>
+        <worshipFactor>0.10</worshipFactor>
+      </li>
+      <li Class="CompProperties_MoteEmitter">
+        <mote>Mote_RedMist</mote>
+        <emissionInterval>600</emissionInterval>
+      </li>
+      <li Class="Corruption.Core.CompProperties_AffectSurroundings">
+        <terrainToSet>Marsh</terrainToSet>
+      </li>
+      <li Class="Corruption.Core.CompProperties_AffectSurroundings">
+        <compClass>Corruption.Core.CompSpawnAround_Plant</compClass>
+        <thingToSpawn>Plant_GrassOfNurgle</thingToSpawn>
+        <canReplaceCategory>Plant</canReplaceCategory>
+      </li>
+      <li Class="Corruption.Core.CompProperties_SpawnTurret">
+        <turretToSpawn>Turret_NurgleTentacleCaster</turretToSpawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="PlantBase">
+    <defName>Plant_GrassOfNurgle</defName>
+    <thingClass>Corruption.Core.Plant_Nurgle</thingClass>
+    <label>grass of nurgle</label>
+    <description>Wild, corrupted plants in the shape of tentacles, bulbs, mushrooms and tubes.</description>
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Flammability>1.3</Flammability>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plants/GrassOfNurgle</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <hideAtSnowDepth>0.5</hideAtSnowDepth>
+    <ingestible />
+    <plant>
+      <fertilityMin>0.05</fertilityMin>
+      <fertilitySensitivity>0.1</fertilitySensitivity>
+      <growDays>1.5</growDays>
+      <leaflessGraphicPath>Things/Plants/GrassOfNurgle</leaflessGraphicPath>
+      <neverBlightable>true</neverBlightable>
+      <harvestWork>40</harvestWork>
+      <maxMeshCount>9</maxMeshCount>
+      <visualSizeRange>0.4~0.6</visualSizeRange>
+      <topWindExposure>0.25</topWindExposure>
+      <wildOrder>1</wildOrder>
+      <harvestYield>5</harvestYield>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>RawCropOfNurgle</harvestedThingDef>
+    </plant>
+    <comps>
+      <li Class="Corruption.Core.CompProperties_AffectSurroundings">
+        <terrainToSet>MarshyTerrain</terrainToSet>
+        <ignoreTerrain>Marsh</ignoreTerrain>
+        <maxRange>3</maxRange>
+        <ticksToEffect>60000</ticksToEffect>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

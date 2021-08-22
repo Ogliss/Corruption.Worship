@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ScenPartDef>
+    <defName>StartingReligion</defName>
+    <label>starting colony religion</label>
+    <scenPartClass>Corruption.Worship.ScenPart_StartingReligion</scenPartClass>
+    <category>StartingImportant</category>
+    <selectionWeight>0.7</selectionWeight>
+    <summaryPriority>400</summaryPriority>
+    <maxUses>1</maxUses>
+  </ScenPartDef>
+
+  
+
+</Defs>

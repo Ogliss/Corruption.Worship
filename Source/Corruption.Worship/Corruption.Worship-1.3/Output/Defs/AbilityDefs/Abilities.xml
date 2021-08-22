@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityDef Name="FavouredAbility" Abstract="True">
+    <gizmoClass>Command_Ability</gizmoClass>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  </AbilityDef>
+
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>CleanseCorruption</defName>
+    <label>cleanse corruption</label>
+    <description>Use the Emperor's light to cleanse corruption from a pawn.</description>
+    <iconPath>UI/Abilities/CleanseCorruption</iconPath>
+    <hotKey>Misc12</hotKey>
+    <cooldownTicksRange>2500~3500</cooldownTicksRange>
+    <targetRequired>True</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>4.0</range>
+      <warmupTime>30</warmupTime>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Corruption.Worship.Abilities.CompProperties_GainCorruption">
+        <compClass>Corruption.Worship.Abilities.CompAbilityEffect_GainCorruption</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>CleanseCorruptionMass</defName>
+    <label>cleanse corruption</label>
+    <abilityClass>Corruption.Psykers.PsykerCastAoE</abilityClass>
+    <description>Use the Emperor's light to cleanse corruption from a pawn.</description>
+    <iconPath>UI/Abilities/CleanseCorruptionMass</iconPath>
+    <hotKey>Misc12</hotKey>
+    <cooldownTicksRange>2500~3500</cooldownTicksRange>
+    <statBases>
+      <Ability_EntropyGain>20</Ability_EntropyGain>
+      <Ability_Duration>30</Ability_Duration>
+      <Ability_EffectRadius>6.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <warmupTime>6</warmupTime>
+      <range>6.9</range>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+      <soundCast>Sunburst</soundCast>
+    </verbProperties>
+    <targetRequired>False</targetRequired>
+    <comps>
+      <li Class="Corruption.Core.Abilities.CompProperties_AroundPsyker">
+        <compClass>Corruption.Core.Abilities.CompAbilityEffect_AreaOfEffect</compClass>
+        <mote>Mote_HolyExorcise</mote>
+      </li>
+      <li Class="Corruption.Worship.Abilities.CompProperties_GainCorruption">
+        <compClass>Corruption.Worship.Abilities.CompAbilityEffect_GainCorruption</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SaintlyTouchInspiration</defName>
+    <label>inspiring touch</label>
+    <description>The saint's touch can inspire someone to greater heights.</description>
+    <iconPath>UI/Abilities/InspiringTouch</iconPath>
+    <hotKey>Misc12</hotKey>
+    <cooldownTicksRange>2500~3500</cooldownTicksRange>
+    <targetRequired>True</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>0.0</range>
+      <warmupTime>0.5</warmupTime>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li>
+        <compClass>CompAbilityEffect_GiveInspiration</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SaintlyTouchSoothing</defName>
+    <label>soothing touch</label>
+    <description>The saint's touch calms the mind. The targeted pawn finds peace in the embrace of slumber.</description>
+    <iconPath>UI/Glow_Emperor</iconPath>
+    <hotKey>Misc12</hotKey>
+    <cooldownTicksRange>2500~3500</cooldownTicksRange>
+    <targetRequired>True</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>0.0</range>
+      <warmupTime>3</warmupTime>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li>
+        <compClass>CompAbilityEffect_PutToSleep</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SaintlyGaze</defName>
+    <label>saintly gaze</label>
+    <description>The saint's eyes penetrate deep into a targets soul, laying bare what lies beneath. The targeted pawn is stunned.</description>
+    <iconPath>UI/Abilities/SaintlyGaze</iconPath>
+    <hotKey>Misc12</hotKey>
+    <cooldownTicksRange>2500~3500</cooldownTicksRange>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <Ability_EntropyGain>12</Ability_EntropyGain>
+      <Ability_Duration>20</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.0</range>
+      <warmupTime>3</warmupTime>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityEffectWithDuration">
+        <compClass>CompAbilityEffect_Stun</compClass>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        <goodwillImpact>-10</goodwillImpact>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SaintlyVisionOfPeace</defName>
+    <label>vision of peace</label>
+    <description>The saint may project a vision to a far away leader, bringing peace to the minds of warmongers and rendering the most bitter rivalries are forgotten. The saint remains vulnerable during this time, so protect them at all costs.</description>
+    <iconPath>UI/Abilities/VisionOfPeace</iconPath>
+    <hotKey>Misc11</hotKey>
+    <cooldownTicksRange>400000~900000</cooldownTicksRange>
+    <targetWorldCell>True</targetWorldCell>
+    <showGizmoOnWorldView>True</showGizmoOnWorldView>
+    <statBases>
+      <Ability_PsyfocusCost>0.7</Ability_PsyfocusCost>
+      <Ability_EffectRadius>4.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <warmupTime>2500</warmupTime>
+      <range>54.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <soundAiming>PrayerSustainer</soundAiming>
+    </verbProperties>
+    <comps>
+      <li Class="Corruption.Core.Abilities.CompProperties_AffectSettlementRelation">
+        <goodwillImpact>50</goodwillImpact>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SaintlyLitanyUnion</defName>
+    <label>litany of union</label>
+    <description>The word of a saint may sway an individual to abandon their own cause and join the saint on their path.</description>
+    <iconPath>UI/Abilities/LitanyOfUnion</iconPath>
+    <hotKey>Misc11</hotKey>
+    <cooldownTicksRange>500000~900000</cooldownTicksRange>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <Ability_EntropyGain>12</Ability_EntropyGain>
+      <Ability_Duration>30</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.0</range>
+      <warmupTime>10</warmupTime>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "Corruption.Core.Abilities.CompProperties_AbilityRecruit">
+        <compClass>Corruption.Core.Abilities.CompAbilityEffect_Recruit</compClass>
+        <mote>Mote_HolyExorcise</mote>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SaintlyTouchHealing</defName>
+    <label>invigorating touch</label>
+    <description>The saint's touch can heal wounds.</description>
+    <iconPath>UI/Abilities/HealingTouch</iconPath>
+    <hotKey>Misc11</hotKey>
+    <cooldownTicksRange>2500~3500</cooldownTicksRange>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <Ability_EntropyGain>12</Ability_EntropyGain>
+      <Ability_Duration>30</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>0.0</range>
+      <warmupTime>3</warmupTime>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>HealingBuffMinor</hediffDef>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        <psychic>True</psychic>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SaintlyAuraInspiration</defName>
+    <abilityClass>Corruption.Core.Abilities.Ability_AoE</abilityClass>
+    <label>inspiring aura</label>
+    <description>The saint's presence can inspire those around them.</description>
+    <iconPath>UI/Abilities/InspiringAura</iconPath>
+    <hotKey>Misc11</hotKey>
+    <cooldownTicksRange>60000~65000</cooldownTicksRange>
+    <targetRequired>False</targetRequired>
+    <statBases>
+      <Ability_EntropyGain>12</Ability_EntropyGain>
+      <Ability_Duration>30</Ability_Duration>
+      <Ability_EffectRadius>6.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>0.0</range>
+      <warmupTime>10</warmupTime>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Corruption.Core.Abilities.CompProperties_AroundPsyker">
+        <compClass>Corruption.Core.Abilities.CompAbilityEffect_AreaOfEffect</compClass>
+      </li>
+      <li>
+        <compClass>CompAbilityEffect_GiveInspiration</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SaintInspiringCharge</defName>
+    <abilityClass>Corruption.Core.Abilities.Ability_AoE</abilityClass>
+    <label>heroic charge</label>
+    <description>All those following the saint seem to be impervious to damage for a final charge.</description>
+    <iconPath>UI/Abilities/InspiringCharge</iconPath>
+    <hotKey>Misc11</hotKey>
+    <cooldownTicksRange>120000~240000</cooldownTicksRange>
+    <targetRequired>False</targetRequired>
+    <statBases>
+      <Ability_EntropyGain>12</Ability_EntropyGain>
+      <Ability_Duration>30</Ability_Duration>
+      <Ability_EffectRadius>6.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>0.0</range>
+      <warmupTime>4</warmupTime>
+      <soundAiming>PrayerSustainer</soundAiming>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>InspiringChargeBuff</hediffDef>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        <psychic>True</psychic>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>KhornateChallenge</defName>
+    <label>khornate challenge</label>
+    <description>Challenge a pawn to a .</description>
+    <iconPath>UI/Abilities/KhornateDuel</iconPath>
+    <hotKey>Misc12</hotKey>
+    <cooldownTicksRange>2500~3500</cooldownTicksRange>
+    <targetRequired>True</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>4.0</range>
+      <warmupTime>30</warmupTime>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetItems>False</canTargetItems>
+        <canTargetBuildings>False</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveMentalState">
+        <compClass>Corruption.Core.Abilities.CompAbilityEffect_GiveMentalStateTargeted</compClass>
+        <stateDef>Duel</stateDef>
+        <stateDefForMechs>Duel</stateDefForMechs>
+        <psychic>False</psychic>
+        <goodwillImpact>-75</goodwillImpact>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>NurgliteRegrowth</defName>
+    <label>nurglite regrowth</label>
+    <description>Maggots and flies burrow into the flesh of the Nurglite, reforming parts that were lost.</description>
+    <level>30</level>
+    <iconPath>UI/Abilities/NurgliteRegrowth</iconPath>
+    <hotKey>Misc1</hotKey>
+    <statBases>
+      <Ability_Duration>120</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <range>1.0</range>
+      <warmupTime>3.25</warmupTime>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+      </targetParams>
+      <soundCast>HealPulse</soundCast>
+    </verbProperties>
+    <cooldownTicksRange>1600~2000</cooldownTicksRange>
+    <targetRequired>False</targetRequired>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>HealingBuffMinor</hediffDef>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        <psychic>True</psychic>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="Corruption.Psykers.AbilityCompProperties_AICast" MayRequire="CptOhu.CorruptionPsyker">
+        <compClass>Corruption.Psykers.AbilityComp_AICastHealSelf</compClass>
+        <abilityCastType>SelfHeal</abilityCastType>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="FavouredAbility">
+    <defName>SirensScream</defName>
+    <label>sirens scream</label>
+    <description>Emit a piercing scream that disorients foes.</description>
+    <level>30</level>
+    <iconPath>UI/Abilities/SirensScream</iconPath>
+    <hotKey>Misc1</hotKey>
+    <statBases>
+      <Ability_Duration>120</Ability_Duration>
+      <Ability_EffectRadius>6</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <range>1.0</range>
+      <warmupTime>3.25</warmupTime>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetMechs>False</canTargetMechs>
+      </targetParams>
+      <soundCast>CacaphonyPulse</soundCast>
+    </verbProperties>
+    <cooldownTicksRange>1600~2000</cooldownTicksRange>
+    <targetRequired>False</targetRequired>
+    <comps>
+      <li Class="Corruption.Core.Abilities.CompProperties_AreaOfEffect"/>
+      <li Class="CompProperties_AbilityGiveMentalState">
+        <compClass>CompAbilityEffect_GiveMentalState</compClass>
+        <stateDef>Wander_Psychotic</stateDef>
+        <stateDefForMechs>Wander_Psychotic</stateDefForMechs>
+        <psychic>False</psychic>
+        <goodwillImpact>-75</goodwillImpact>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+
+
+</Defs>

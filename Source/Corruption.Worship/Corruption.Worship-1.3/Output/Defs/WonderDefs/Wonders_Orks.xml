@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <Corruption.Worship.Wonders.WonderDef Abstract="True" Name="OrkWonder"  MayRequire="Ogliss.AdMech.Xenobiologis.Orkz">
+    <associatedGods>
+      <li>Gork</li>
+      <li>Mork</li>
+    </associatedGods>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef ParentName="OrkWonder"  MayRequire="Ogliss.AdMech.Xenobiologis.Orkz">
+    <defName>OrkPredators</defName>
+    <label>Beasthunt</label>
+    <description>A pack of manhunting beasts appear to be hunted down.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_FireIncident</workerClass>
+    <wonderIconPath>UI/Wonders/WondersOrkBeasts</wonderIconPath>
+    <favourCost>0</favourCost>
+    <incident>ManhunterPack</incident>
+    <pointsScalable>True</pointsScalable>
+  </Corruption.Worship.Wonders.WonderDef>
+
+
+  <Corruption.Worship.Wonders.WonderDef>
+    <defName>OrkFootOfGork</defName>
+    <label>Foot of Gork</label>
+    <description>Summon the might of Gork in the form of his krumping foot.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_SpawnThing</workerClass>
+    <wonderIconPath>UI/Wonders/WondersOrkFootOfGork</wonderIconPath>
+    <favourCost>1000</favourCost>
+    <thingsToSpawn>
+      <FootOfGork>1</FootOfGork>
+    </thingsToSpawn>
+    <associatedGods>
+      <li>Gork</li>
+    </associatedGods>
+  </Corruption.Worship.Wonders.WonderDef>
+
+
+  <Corruption.Worship.Wonders.WonderDef>
+    <defName>OrkGazeOfMork</defName>
+    <label>Gaze of Mork</label>
+    <description>Let Mork's glare incinerate enemies.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_OrbitalStrike</workerClass>
+    <wonderIconPath>UI/Wonders/WondersOrkGazeOfMork</wonderIconPath>
+    <favourCost>1000</favourCost>
+    <effectDurationRange>180~450</effectDurationRange>
+    <thingsToSpawn>
+      <GazeOfMork>1</GazeOfMork>
+    </thingsToSpawn>
+    <associatedGods>
+      <li>Mork</li>
+    </associatedGods>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  
+  <Corruption.Worship.Wonders.WonderDef ParentName="OrkWonder"  MayRequire="Ogliss.AdMech.Xenobiologis.Orkz">
+    <defName>OrkMusterWaagh</defName>
+    <label>Muster for Waaagh</label>
+    <description>Draw Feral or Spacefaring Orks to your colony.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_FireIncident</workerClass>
+    <wonderIconPath>UI/Wonders/WondersOrkWaaagh</wonderIconPath>
+    <favourCost>2000</favourCost>
+    <incident>OrkGrowingWaagh</incident>
+    <pointsScalable>True</pointsScalable>
+    <pointsCurve>
+      <points>
+        <li>(1000,0)</li>
+        <li>(2000,500)</li>
+        <li>(3000,750)</li>
+        <li>(4000,1200)</li>
+        <li>(5000,1800)</li>
+        <li>(20000,3000)</li>
+      </points>
+    </pointsCurve>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef  MayRequire="Ogliss.AdMech.Xenobiologis.Orkz">
+    <defName>OrkChosenOfGork</defName>
+    <label>Chosen of Gork</label>
+    <description>Select an Ork to become a favourite of Gork.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_AddSpecialTrait</workerClass>
+    <wonderIconPath>UI/Wonders/WondersOrkGork</wonderIconPath>
+    <favourCost>10000</favourCost>
+    <traitToGive>OrkChosenOfGork</traitToGive>
+    <associatedGods>
+      <li>Gork</li>
+    </associatedGods>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef  MayRequire="Ogliss.AdMech.Xenobiologis.Orkz">
+    <defName>OrkChosenOfMork</defName>
+    <label>Chosen of Mork</label>
+    <description>Select an Ork to become a favourite of Mork.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_AddSpecialTrait</workerClass>
+    <wonderIconPath>UI/Wonders/WondersOrkMork</wonderIconPath>
+    <favourCost>10000</favourCost>
+    <traitToGive>OrkChosenOfMork</traitToGive>
+    <associatedGods>
+      <li>Mork</li>
+    </associatedGods>
+  </Corruption.Worship.Wonders.WonderDef>  
+  
+</Defs>

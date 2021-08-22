@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>InspiringChargeBuff</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.93, 0.78, 0.19)</defaultLabelColor>
+    <label>inspired charge</label>
+    <description>This pawn is inspired by a saint to charge into enemy lines in the knowledge that the Emperor protects.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>3600~3600</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <IncomingDamageFactor>0.2</IncomingDamageFactor>
+          <MentalBreakThreshold>5</MentalBreakThreshold>
+          <MoveSpeed>0.50</MoveSpeed>
+          <CarryingCapacity>0.50</CarryingCapacity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+</Defs>

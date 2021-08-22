@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>HoldSermon</defName>
+    <driverClass>Corruption.Worship.JobDriver_HoldSermon</driverClass>
+    <reportString>holding a sermon.</reportString>
+    <joyDuration>600</joyDuration>
+    <joyGainRate>2</joyGainRate>
+    <joyMaxParticipants>20</joyMaxParticipants>
+    <joyKind>Worship</joyKind>
+  </JobDef>
+  
+  <JobDef>
+    <defName>AssistPreacher</defName>
+    <driverClass>Corruption.Worship.JobDriver_AttendSermon</driverClass>
+    <reportString>assisting preacher.</reportString>
+    <joyDuration>600</joyDuration>
+    <joyGainRate>2</joyGainRate>
+    <joyMaxParticipants>20</joyMaxParticipants>
+    <joyKind>Worship</joyKind>
+  </JobDef>
+
+
+  <JobDef>
+    <defName>AttendSermon</defName>
+    <driverClass>Corruption.Worship.JobDriver_AttendSermon</driverClass>
+    <reportString>attending a sermon.</reportString>
+    <joyDuration>400</joyDuration>
+    <joyGainRate>1</joyGainRate>
+    <joyMaxParticipants>20</joyMaxParticipants>
+    <joyKind>Worship</joyKind>
+  </JobDef>
+
+  <JobDef>
+    <defName>InstallEffigy</defName>
+    <driverClass>JobDriver_HaulToContainer</driverClass>
+    <reportString>installing TargetA on TargetB.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RingBellTower</defName>
+    <driverClass>Corruption.Worship.JobDriver_RingBellTower</driverClass>
+    <reportString>ringing bell.</reportString>
+  </JobDef>
+  
+  <JobDef>
+    <defName>PrayAtPilgrimage</defName>
+    <driverClass>Corruption.Worship.Quests.JobDriver_PrayAtQuestTarget</driverClass>
+    <reportString>praying.</reportString>
+    <joyDuration>600</joyDuration>
+    <joyKind>Meditative</joyKind>
+    <taleOnCompletion>Prayed</taleOnCompletion>
+  </JobDef>
+  
+</Defs>

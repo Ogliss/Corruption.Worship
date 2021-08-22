@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>Mission_Enemy_Champion</defName>
+    <rootMinPoints>0</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <isRootSpecial>false</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[challenge] [preposition] [Adversary_nameFull]</li>
+
+
+        <li>preposition->of</li>
+
+        <li>challenge->Challenge</li>
+        <li>challenge->Trial</li>
+        <li>challenge->Defiance</li>
+        <li>challenge->Fury</li>
+        <li>challenge->Despair</li>
+
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+
+        <li>questDescription->Your colonist [champion_nameFull] has received word of a worthy adversary drawing close. Go meet [Adversary_nameFull] on the battlefield to gain favour and progress  [playerChampionName]'s aspirations.\n</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+            <pointsFactorThreeStar>2</pointsFactorThreeStar>
+          </parms>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+        <!-- Choose champion kind -->
+        <li Class="QuestNode_GetPawnKind">
+          <storeAs>championPawnKind</storeAs>
+          <options>
+            <li>
+              <kindDef>Chaos_Champion_Khorne</kindDef>
+            </li>
+            <li>
+              <kindDef>Chaos_Champion_Nurgle</kindDef>
+            </li>
+            <li>
+              <kindDef>Chaos_Champion_Slaanesh</kindDef>
+            </li>
+            <li>
+              <kindDef>Chaos_Champion_Tzeentch</kindDef>
+            </li>
+          </options>
+        </li>
+
+        <li Class="QuestNode_GetPawnKind">
+          <storeAs>lodgersPawnKind</storeAs>
+          <options>
+            <li>
+              <kindDef>Cultist_Gunner</kindDef>
+            </li>
+            <li>
+              <kindDef>Cultist_Brawler</kindDef>
+            </li>
+          </options>
+        </li>
+
+        <li  Class="QuestNode_GeneratePawn">
+          <storeAs>challenger</storeAs>
+          <kindDef>$championPawnKind</kindDef>
+          <addToList>raiders</addToList>
+          <ensureNonNumericName>true</ensureNonNumericName>
+        </li>
+
+        <!-- Imperial site -->
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <sitePartsTags>
+            <li>
+              <tag>ChampionEncounter</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>Chaos_NPC</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>favour</name>
+          <value>$sitePartsParams.threatPoints</value>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+          </parms>
+        </li>
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <!-- Site expires -->
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(60*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">Whatever vision your pawns may have head, the moment to act upon it has faded.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        
+        <li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <name>raidDelayTicks</name>
+                <value>$(roundToTicksRough(randInt(1800, 2400)))</value>
+              </li>
+              <li Class="QuestNode_GetWalkInSpot"/>
+              <li Class="QuestNode_Delay">
+                <delayTicks>$raidDelayTicks</delayTicks>
+                <node Class="QuestNode_SubScript">
+                  <def>Util_RaidFixed</def>
+                  <prefix>raid</prefix>
+                  <parms>
+                    <inSignal>$inSignal</inSignal>
+                    <map>$site.Map</map>
+                    <points>$points</points>
+                    <enemyFaction>$enemyFaction</enemyFaction>
+                    <walkInSpot>$walkInSpot</walkInSpot>
+                    <customLetterLabel TKey="LetterLabelCashing">{BASELABEL} chasing [../joiner_nameDef]</customLetterLabel>
+                    <customLetterText TKey="LetterTextCashing">
+                      {BASETEXT}
+                      \nThe [enemyFaction_pawnsPlural] have come to meet your challenge.
+                    </customLetterText>
+                  </parms>
+                </node>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node  Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterHereticPurgeFinished">Quest completed</label>
+                <letterDef>PositiveEvent</letterDef>
+                <text TKey="LetterTextChallengeFinished">You have successfully completed the quest '[resolvedQuestName]'!\n\nYou have defeated the enemy champion [challenger_fullName]. You have gained [favour] favour from the [godName].</text>
+              </li>
+              <li Class="Corruption.Worship.Quests.QuestNode_AwardFavour">
+                <favourToGain>$favour</favourToGain>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Success</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>Util_RaidFixed</defName>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>threatDescription->[enemyFaction_pawnsPlural] from [enemyFaction_name] will attack you. Their group is composed of:\n\n[raidPawnKinds]\n\n[raidArrivalModeInfo]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="Corruption.Worship.Quests.QuestNode_RaidFixed">
+          <tag>$tag</tag>
+          <customLetterLabel>$customLetterLabel</customLetterLabel>
+          <customLetterText>$customLetterText</customLetterText>
+          <customLetterLabelRules>$customLetterLabelRules</customLetterLabelRules>
+          <customLetterTextRules>$customLetterTextRules</customLetterTextRules>
+          <inSignalLeave>EndRaid</inSignalLeave>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

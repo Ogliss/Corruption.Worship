@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corruption.Worship", "Corruption.Worship-1.3\Corruption.Worship-1.3.csproj", "{C0E76F5A-2DE8-42A2-B6C8-6DF709729CC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0E76F5A-2DE8-42A2-B6C8-6DF709729CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E76F5A-2DE8-42A2-B6C8-6DF709729CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E76F5A-2DE8-42A2-B6C8-6DF709729CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E76F5A-2DE8-42A2-B6C8-6DF709729CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {528BCCA4-A93D-4847-AF0C-7E65D5D3F028}
+	EndGlobalSection
+EndGlobal

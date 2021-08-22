@@ -1,0 +1,12 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\Output\Assemblies\Corruption.Worship.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\Output\Assemblies\Corruption.Worship.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\Output\Assemblies\0Harmony.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\obj\Debug\Corruption.Worship-1.2.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\obj\Debug\Corruption.Worship-1.2.AssemblyInfoInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\obj\Debug\Corruption.Worship-1.2.AssemblyInfo.cs
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\obj\Debug\Corruption.Worship-1.2.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\obj\Debug\Corruption.Worship-1.2.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\obj\Debug\Corruption.Worship.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\Source\Corruption.Worship\Corruption.Worship-1.2\obj\Debug\Corruption.Worship.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\1.2\Assemblies\Corruption.Worship.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Corruption.Worship\1.2\Assemblies\Corruption.Worship.pdb

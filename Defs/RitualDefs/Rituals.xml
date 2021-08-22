@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <Corruption.Worship.RitualDef>
+    <defName>Sermon</defName>
+    <ritualClass>Corruption.Worship.RitualWorker_Sermon</ritualClass>
+  </Corruption.Worship.RitualDef>
+
+  
+</Defs>

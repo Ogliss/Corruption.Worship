@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4C23909-5B3B-4892-9610-E2122C8FA031}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Corruption.Worship</RootNamespace>
+    <AssemblyName>Corruption.Worship</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFramework>net472</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\1.3\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Abilities\CompAbilityEffect_CleanseCorruption.cs" />
+    <Compile Include="Altar_RecordsTracker.cs" />
+    <Compile Include="BuildingAltar.cs" />
+    <Compile Include="BuildingSacrificialAltar.cs" />
+    <Compile Include="Building_TurretGunInvisible.cs" />
+    <Compile Include="Building_WorshipStatue.cs" />
+    <Compile Include="CompAltar.cs" />
+    <Compile Include="CompBellTower.cs" />
+    <Compile Include="CompEffigy.cs" />
+    <Compile Include="CompFireOverlayColorable.cs" />
+    <Compile Include="CompRitualSpot.cs" />
+    <Compile Include="CorpseGenerator.cs" />
+    <Compile Include="Dialog_ReligiosRiot.cs" />
+    <Compile Include="Dialog_AssignPreacher.cs" />
+    <Compile Include="Dialog_RenameSermon.cs" />
+    <Compile Include="Dialog_RenameTemple.cs" />
+    <Compile Include="Dialog_SetReligion.cs" />
+    <Compile Include="DutyDefOf.cs" />
+    <Compile Include="GatheringDefOf.cs" />
+    <Compile Include="GatheringWorker.cs" />
+    <Compile Include="GlobalWorshipTracker.cs" />
+    <Compile Include="GodFavourWorker_Global.cs" />
+    <Compile Include="IngestionOutcomeDoer_AffectSoul.cs" />
+    <Compile Include="ITab_Altar.cs" />
+    <Compile Include="ItemEffigy.cs" />
+    <Compile Include="JobDefOf.cs" />
+    <Compile Include="JobDriver_AttendSermon.cs" />
+    <Compile Include="JobDriver_HoldSermon.cs" />
+    <Compile Include="JobDriver_PrayToShrine.cs" />
+    <Compile Include="JobDriver_RingBellTower.cs" />
+    <Compile Include="JobGiver_AssistSermon.cs" />
+    <Compile Include="JobGiver_HoldSermon.cs" />
+    <Compile Include="JobGiver_RingBells.cs" />
+    <Compile Include="JobGiver_SpectateDutySermon.cs" />
+    <Compile Include="JoyGiver_Prayer.cs" />
+    <Compile Include="LordJob_Sermon.cs" />
+    <Compile Include="LordToil_StartSermom.cs" />
+    <Compile Include="LordToil_TravelUrgent.cs" />
+    <Compile Include="MainTabWindow_Worship.cs" />
+    <Compile Include="MentalState_Duel.cs" />
+    <Compile Include="JobGiver_Duel.cs" />
+    <Compile Include="Output\Rituals\RitualDef.cs" />
+    <Compile Include="Quests\GenStep_SpawnHorde.cs" />
+    <Compile Include="Quests\QuestNode_AwardFavourChampion.cs" />
+    <Compile Include="Quests\QuestNode_RaidFixed.cs" />
+    <Compile Include="Sketches\SketchResolver_AddThingsCentralFixed.cs" />
+    <Compile Include="PantheonFollowers.cs" />
+    <Compile Include="PlaceWorker_RequiresReligion.cs" />
+    <Compile Include="PantheonAttributeWorker_Pilgrims.cs" />
+    <Compile Include="PawnDutyDefOf.cs" />
+    <Compile Include="Quests\Comp_QuestItem_GivePrayer.cs" />
+    <Compile Include="Quests\GenStep_AncientGrave.cs" />
+    <Compile Include="Quests\JobDriver_PrayAtQuestTarget.cs" />
+    <Compile Include="Quests\QuestNode_AwardFavour.cs" />
+    <Compile Include="Quests\QuestNode_CreateItemOfPilgrimage.cs" />
+    <Compile Include="Quests\QuestPart_InjectComponent.cs" />
+    <Compile Include="Quests\QuestScriptDefOf.cs" />
+    <Compile Include="Quests\SiteWorker_Pilgrimage.cs" />
+    <Compile Include="Ritual.cs" />
+    <Compile Include="RitualDef.cs" />
+    <Compile Include="RitualDefOf.cs" />
+    <Compile Include="RoomRoleDefOf.cs" />
+    <Compile Include="RoomRoleWorker_Worship.cs" />
+    <Compile Include="SacrificialBuilding.cs" />
+    <Compile Include="ScenPart_StartingReligion.cs" />
+    <Compile Include="SermonTemplate.cs" />
+    <Compile Include="SermonThoughtDefOf.cs" />
+    <Compile Include="SermonUtility.cs" />
+    <Compile Include="SitePartDefOf.cs" />
+    <Compile Include="Sketches\WorshipSketchDefOf.cs" />
+    <Compile Include="SoundDefOf.cs" />
+    <Compile Include="Tale_TraitProgression.cs" />
+    <Compile Include="TempleCardUtility.cs" />
+    <Compile Include="TraitDefOfs.cs" />
+    <Compile Include="Window_ChosenAbilities.cs" />
+    <Compile Include="Wonders\Dialog_FormAndSendPilgrims.cs" />
+    <Compile Include="Wonders\GameCondition_EmperorPositive.cs" />
+    <Compile Include="Wonders\IncidentTargetable.cs" />
+    <Compile Include="Wonders\IncidentWorker_GrowingFlock.cs" />
+    <Compile Include="Wonders\IncidentWorker_GrowingWaaagh.cs" />
+    <Compile Include="Wonders\IncidentWorker_KhorneFrenzy.cs" />
+    <Compile Include="Wonders\IncidentWorker_NurgleBreath.cs" />
+    <Compile Include="Wonders\IncidentWorker_SlaaneshOrgy.cs" />
+    <Compile Include="Wonders\WonderDef.cs" />
+    <Compile Include="Wonders\WonderWorker.cs" />
+    <Compile Include="Wonders\WonderWorker_AddHediff.cs" />
+    <Compile Include="Wonders\WonderWorker_AddSpecialTrait.cs" />
+    <Compile Include="Wonders\WonderWorker_AmbitiousShuffle.cs" />
+    <Compile Include="Wonders\WonderWorker_ChangeRelation.cs" />
+    <Compile Include="Wonders\WonderWorker_CleanseCorruption.cs" />
+    <Compile Include="Wonders\WonderWorker_FinishResearch.cs" />
+    <Compile Include="Wonders\WonderWorker_FireIncident.cs" />
+    <Compile Include="Wonders\WonderWorker_HealAllPawns.cs" />
+    <Compile Include="Wonders\WonderWorker_PoliticalUpheaval.cs" />
+    <Compile Include="Wonders\WonderWorker_Quest.cs" />
+    <Compile Include="Wonders\WonderWorker_RaisePassion.cs" />
+    <Compile Include="Wonders\WonderWorker_SpawnThing.cs" />
+    <Compile Include="Wonders\WonderWorker_StartMentalState.cs" />
+    <Compile Include="Wonders\WonderWorker_Targetable.cs" />
+    <Compile Include="Wonders\WonderWorker_Pilgrimage.cs" />
+    <Compile Include="WorshipActType.cs" />
+    <Compile Include="WorshipConceptDefOf.cs" />
+    <Compile Include="WorshipRecordDefOf.cs" />
+    <Compile Include="WorshipStoryComponent.cs" />
+    <Compile Include="WorshipTaleDefOfs.cs" />
+    <Compile Include="WorshipThoughtDefOf.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Output\Assemblies\Corruption.Worship.dll" />
+    <Content Include="Output\Assemblies\Corruption.Worship.pdb" />
+    <Content Include="Output\About\About.xml" />
+    <Content Include="Output\About\Preview.png" />
+    <Content Include="Output\Defs\AbilityDefs\Abilities.xml" />
+    <Content Include="Output\Defs\CorruptionMainTabDefs\WorshipTabDef.xml" />
+    <Content Include="Output\Defs\DesignationCategoryDefs\DesignationCategories.xml" />
+    <Content Include="Output\Defs\DutyDefs\Duties.xml" />
+    <Content Include="Output\Defs\GatheringDefs\Gatherings.xml" />
+    <Content Include="Output\Defs\HediffDefs\MutationHediffs.xml" />
+    <Content Include="Output\Defs\HediffDefs\TraitHediffs.xml" />
+    <Content Include="Output\Defs\HediffDefs\WonderHediffs.xml" />
+    <Content Include="Output\Defs\IncidentDefs\Incidents_Good.xml" />
+    <Content Include="Output\Defs\IncidentDefs\Incidents_ThreatBig.xml" />
+    <Content Include="Output\Defs\JobDefs\Jobs.xml" />
+    <Content Include="Output\Defs\JoyGivers\JoyGivers.xml" />
+    <Content Include="Output\Defs\JoyKindDefs\JoyKinds.xml" />
+    <Content Include="Output\Defs\MainButtonDefs\MainButtonDefs.xml" />
+    <Content Include="Output\Defs\MentalStateDefs\MentalStates.xml" />
+    <Content Include="Output\Defs\PawnKindDefs\PawnKinds.xml" />
+    <Content Include="Output\Defs\QuestScriptDefs\Script_Enemy_Champion.xml" />
+    <Content Include="Output\Defs\QuestScriptDefs\Script_Heretic_Lair.xml" />
+    <Content Include="Output\Defs\QuestScriptDefs\Script_Pilgrimage_Champion.xml" />
+    <Content Include="Output\Defs\QuestScriptDefs\Script_Pilgrimage_Vision.xml" />
+    <Content Include="Output\Defs\RecipeDefs\Recipes.xml" />
+    <Content Include="Output\Defs\RecordDefs\WorshipRecords.xml" />
+    <Content Include="Output\Defs\RitualDefs\Rituals.xml" />
+    <Content Include="Output\Defs\RoomRoleDefs\RoomRoles.xml" />
+    <Content Include="Output\Defs\RulePackDefs\RulePacks_Tales.xml" />
+    <Content Include="Output\Defs\ScenPartDefs\ScenParts.xml" />
+    <Content Include="Output\Defs\Sites\Parts\ChampionEncounter.xml" />
+    <Content Include="Output\Defs\Sites\Parts\PlaceOfVision.xml" />
+    <Content Include="Output\Defs\SketchResolverDefs\SketchResolvers.xml" />
+    <Content Include="Output\Defs\SoundDefs\Sounds.xml" />
+    <Content Include="Output\Defs\TaleDefs\Tales_Saint.xml" />
+    <Content Include="Output\Defs\ThingDefs\Buildings_Worship.xml" />
+    <Content Include="Output\Defs\ThingDefs\Items_Effigies.xml" />
+    <Content Include="Output\Defs\ThingDefs\Items_Resources_RawPlant.xml" />
+    <Content Include="Output\Defs\ThingDefs\Motes.xml" />
+    <Content Include="Output\Defs\ThingDefs\Plants.xml" />
+    <Content Include="Output\Defs\ThingDefs\Plant_Turrets.xml" />
+    <Content Include="Output\Defs\ThingDefs\Vortex.xml" />
+    <Content Include="Output\Defs\ThoughtDefs\Gathering_Thoughts.xml" />
+    <Content Include="Output\Defs\ThoughtDefs\Thoughts.xml" />
+    <Content Include="Output\Defs\TraitDefs\WorshipTraits.xml" />
+    <Content Include="Output\Defs\TraitDefs\XenoTraits.xml" />
+    <Content Include="Output\Defs\TutorDefs\Concepts.xml" />
+    <Content Include="Output\Defs\WonderDefs\Wonders_Emperor.xml" />
+    <Content Include="Output\Defs\WonderDefs\Wonders_Khorne.xml" />
+    <Content Include="Output\Defs\WonderDefs\Wonders_Nurgle.xml" />
+    <Content Include="Output\Defs\WonderDefs\Wonders_Orks.xml" />
+    <Content Include="Output\Defs\WonderDefs\Wonders_Slaanesh.xml" />
+    <Content Include="Output\Defs\WonderDefs\Wonders_Tzeentch.xml" />
+    <Content Include="Output\Languages\English\Keyed\Worship.xml" />
+    <Content Include="Output\Patches\CaravanPatches.xml" />
+    <Content Include="Output\Patches\EffigyPatch.xml" />
+    <Content Include="Output\Patches\GodPatches.xml" />
+    <Content Include="Output\Patches\ThinktreePatches.xml" />
+    <Content Include="Output\Patches\XenoPatches.xml" />
+    <Content Include="Output\Patches\PrayerPatches.xml" />
+    <Content Include="Output\Patches\ScenarioPatches.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.3.3080" />
+    <PackageReference Include="Lib.Harmony" Version="2.1.1" />
+    <PackageReference Include="TaskPubliciser">
+      <Version>1.0.3</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Corruption.Core\Source\Corruption.Core\Corruption.Core-1.3\Corruption.Core-1.3.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="MyCode" BeforeTargets="UpdateReferences">
+    <PropertyGroup>
+      <AssemblyCSharp>$(PkgKrafs_Rimworld_Ref)\ref\net472\Assembly-CSharp.dll</AssemblyCSharp>
+      <PubliciseOutputPath>$(PkgKrafs_Rimworld_Ref)\ref\net472\</PubliciseOutputPath>
+      <AssemblyCSharp_Publicised>$(PubliciseOutputPath)Assembly-CSharp_publicised.dll</AssemblyCSharp_Publicised>
+    </PropertyGroup>
+    <Publicise TargetAssemblyPath="$(AssemblyCSharp)" OutputPath="$(PubliciseOutputPath)" Condition="Exists('$(AssemblyCSharp)')" />
+    <ItemGroup>
+      <Reference Include="$(AssemblyCSharp_Publicised)">
+        <SpecificVersion>false</SpecificVersion>
+        <HintPath>$(AssemblyCSharp_Publicised)</HintPath>
+        <Implicit>true</Implicit>
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+  </Target>
+  <Target Name="UpdateReferences" AfterTargets="ResolveLockFileReferences">
+    <ItemGroup>
+      <Reference Remove="$(PkgKrafs_Rimworld_Ref)\ref\net472\Assembly-CSharp.dll" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

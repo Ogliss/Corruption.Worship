@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase" Name="InvisibleTurret" Abstract="True">
+    <defName>Turret_InvisibleBase</defName>
+    <label>mini-turret</label>
+    <description>A portable automatic turret. Requires steel to refurbish its barrel after heavy use. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+    <thingClass>Corruption.Worship.Building_TurretGunInvisible</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Things/Building/Security/TurretMini_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/TurretMini_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>8</Mass>
+      <Beauty>-20</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.1</fillPercent>
+    <hasTooltip>false</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <combatPower>25</combatPower>
+      <!-- same as a scavenger -->
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretBurstCooldownTime>4.8</turretBurstCooldownTime>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <designationHotKey>Misc2</designationHotKey>
+  </ThingDef>
+
+  <ThingDef ParentName="InvisibleTurret">
+    <defName>Turret_NurgleTentacleCaster</defName>
+    <label>tentacle caster</label>
+    <description>A bulbous growth able to project tentacles.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/TurretMini_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0,0)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/TurretMini_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <selectable>false</selectable>
+    <statBases>
+      <Mass>2</Mass>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <building>
+      <combatPower>25</combatPower>
+      <!-- same as a scavenger -->
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_NurgleTentacleCaster</turretGunDef>
+      <turretBurstCooldownTime>4.8</turretBurstCooldownTime>
+      <turretBurstWarmupTime>5.0</turretBurstWarmupTime>
+    </building>
+    <comps>
+      <li>
+        <compClass>Corruption.Core.CompDamageLinker</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <thingClass>Corruption.Core.Items.Projectile_Trail</thingClass>
+    <defName>Bullet_NurgleTentacle</defName>
+    <label>tentacle</label>
+    <graphicData>
+      <texPath>Things/Projectile/NurgleTentacle_Tip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Cut</damageDef>
+      <damageAmountBase>3</damageAmountBase>
+      <speed>50</speed>
+    </projectile>
+    <comps>
+      <li Class="Corruption.Core.Items.CompProperties_ProjectileTrail">
+        <trailTexPath>Things/Projectile/NurgleTentacle</trailTexPath>
+        <postImpactLifetime>10</postImpactLifetime>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_NurgleTentacleCaster</defName>
+    <label>tentacle caster</label>
+    <description>A simple tentacle caster.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/TurretMini_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0,0)</drawSize>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.70</AccuracyTouch>
+      <AccuracyShort>0.64</AccuracyShort>
+      <AccuracyMedium>0.41</AccuracyMedium>
+      <AccuracyLong>0.22</AccuracyLong>
+      <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <defaultProjectile>Bullet_NurgleTentacle</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>5.0</range>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Shot_Tentacle</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+</Defs>
