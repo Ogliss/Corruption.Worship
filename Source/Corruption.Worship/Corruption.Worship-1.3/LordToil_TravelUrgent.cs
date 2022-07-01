@@ -56,7 +56,7 @@ namespace Corruption.Worship
             LordToilData_Travel data = this.Data;
             for (int i = 0; i < this.lord.ownedPawns.Count; i++)
             {
-                PawnDuty pawnDuty = new PawnDuty(PawnDutyDefOf.JoinSermon, data.dest, -1f);
+                PawnDuty pawnDuty = new PawnDuty(WorshipDutyDefOf.Corruption_JoinSermon, data.dest, -1f);
                 pawnDuty.maxDanger = this.maxDanger;
                 this.lord.ownedPawns[i].mindState.duty = pawnDuty;
             }

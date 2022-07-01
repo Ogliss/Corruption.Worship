@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DutyDef>
+    <defName>Corruption_JoinSermon</defName>
+    <alwaysShowWeapon>false	</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="Corruption.Worship.JobGiver_HoldSermon"/>
+
+        <!-- Reach the party area -->
+        <li Class="JobGiver_WanderInGatheringArea">
+          <ticksBetweenWandersRange>
+            <min>50</min>
+            <max>250</max>
+          </ticksBetweenWandersRange>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>Corruption_TravelUrgent</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto travel destination if reachable -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+        <!-- Basic needs -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>SatisfyVeryUrgentNeeds</treeDef>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+
+
+  <DutyDef>
+    <defName>Corruption_HoldSermon</defName>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="Corruption.Worship.JobGiver_HoldSermon" />
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>Corruption_AssistSermon</defName>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+        <li Class="Corruption.Worship.JobGiver_RingBells" />
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="Corruption.Worship.JobGiver_AssistSermon" />
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>Corruption_AttendSermon</defName>
+    <hook>MediumPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Spectate -->
+        <li Class="Corruption.Worship.JobGiver_SpectateDutySermon" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

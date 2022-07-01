@@ -125,7 +125,7 @@ namespace Corruption.Worship
 
                 foreach (var favour in this.Favours)
                 {
-                    favour.Deteriorate();
+                    favour.Deteriorate(0);
                 }
             }
             foreach (var kvp in this.GlobalWonderCooldownTicks)

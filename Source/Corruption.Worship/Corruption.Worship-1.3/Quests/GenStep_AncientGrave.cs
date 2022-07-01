@@ -124,7 +124,7 @@ namespace Corruption.Worship.Quests
                         {
                             casket.GetStoreSettings().filter.SetAllowAll(casket.def.building.defaultStorageSettings.filter);
                             var corpse = CorpseGenerator.GenerateDessicatedCorpse(Corruption.Core.FactionsDefOf.IoM_NPC.basicMemberKind, new IntRange(GenDate.TicksPerYear * 100, GenDate.TicksPerYear * 90));
-                            corpse.InnerPawn.story.traits.GainTrait(new Trait(TraitDefOfs.HumanSaint));
+                            corpse.InnerPawn.story.traits.GainTrait(new Trait(WorshipTraitDefOfs.HumanSaint));
                         }
                         itemReplaced = true;
                     }

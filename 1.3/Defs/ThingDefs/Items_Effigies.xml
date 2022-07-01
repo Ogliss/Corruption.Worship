@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <!--=============== Emperor ====================-->
+
+  <ThingDef ParentName="ResourceBase">
+    <thingClass>Corruption.Worship.ItemEffigy</thingClass>
+    <defName>Effigy_Emperor</defName>
+    <label>Effigy of the Emperor</label>
+    <description>A small item of worship in the shape of the emperor of mankind. May sooth the mind.</description>
+    <graphicData>
+      <texPath>Things/Effigies/Effigy_Emperor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>21</MarketValue>
+      <Flammability>1.0</Flammability>
+      <Mass>0.35</Mass>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+      <li>WorshipItems</li>
+    </thingCategories>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <comps>
+      <li Class="Corruption.Core.Items.CompProperties_Empyreal">
+        <compClass>Corruption.Core.Items.CompEmpyreal</compClass>        
+        <GainRate>-20.0</GainRate><!--GainRate>-10.0</GainRate-->
+      </li>
+      <li Class="Corruption.Worship.CompProperties_Effigy">
+        <compClass>Corruption.Worship.CompEffigy</compClass>
+        <dedicatedTo>Emperor</dedicatedTo>
+      </li>
+    </comps>
+    <costStuffCount>50</costStuffCount>    
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <thingClass>Corruption.Worship.ItemEffigy</thingClass>
+    <defName>Effigy_Chaos</defName>
+    <label>Curious effigy</label>
+    <description>A small item of worship in the shape of a eight-pointed star.</description>
+    <graphicData>
+      <texPath>Things/Effigies/Effigy_Undivided</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>21</MarketValue>
+      <Flammability>1.0</Flammability>
+      <Mass>0.35</Mass>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <comps>
+      <li Class="Corruption.Core.Items.CompProperties_Empyreal">
+        <compClass>Corruption.Core.Items.CompEmpyreal</compClass>        
+        <GainRate>20.0</GainRate><!--GainRate>10.0</GainRate-->
+      </li>
+      <li Class="Corruption.Worship.CompProperties_Effigy">
+        <compClass>Corruption.Worship.CompEffigy</compClass>
+        <dedicatedPantheon>Chaos</dedicatedPantheon>
+      </li>
+    </comps>
+
+    <costStuffCount>50</costStuffCount>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <thingClass>Corruption.Worship.ItemEffigy</thingClass>
+    <defName>Effigy_Khorne</defName>
+    <label>Curious effigy</label>
+    <description>A small item of worship in the shape of a horned giant.</description>
+    <graphicData>
+      <texPath>Things/Effigies/Effigy_Khorne</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>21</MarketValue>
+      <Flammability>1.0</Flammability>
+      <Mass>0.35</Mass>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(200,0,0,0)</glowColor>
+      </li>
+      <li Class="Corruption.Core.Items.CompProperties_Empyreal">
+        <compClass>Corruption.Core.Items.CompEmpyreal</compClass>        
+        <GainRate>20.0</GainRate><!--GainRate>10.0</GainRate-->
+      </li>
+      <li Class="Corruption.Worship.CompProperties_Effigy">
+        <compClass>Corruption.Worship.CompEffigy</compClass>
+        <dedicatedTo>Khorne</dedicatedTo>
+      </li>
+    </comps>
+
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <thingClass>Corruption.Worship.ItemEffigy</thingClass>
+    <defName>Effigy_Nurgle</defName>
+    <label>Curious effigy</label>
+    <description>A small item of worship in the shape of a giant, bloated creature.</description>
+    <graphicData>
+      <texPath>Things/Effigies/Effigy_Nurgle</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>21</MarketValue>
+      <Flammability>1.0</Flammability>
+      <Mass>0.35</Mass>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0,200,0,0)</glowColor>
+      </li>
+      <li Class="Corruption.Core.Items.CompProperties_Empyreal">
+        <compClass>Corruption.Core.Items.CompEmpyreal</compClass>        
+        <GainRate>20.0</GainRate><!--GainRate>10.0</GainRate-->
+      </li>
+      <li Class="Corruption.Worship.CompProperties_Effigy">
+        <compClass>Corruption.Worship.CompEffigy</compClass>
+        <dedicatedTo>Nurgle</dedicatedTo>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <thingClass>Corruption.Worship.ItemEffigy</thingClass>
+    <defName>Effigy_Tzeentch</defName>
+    <label>Curious effigy</label>
+    <description>A small item of worship. Looks like some sort of arcane symbol.</description>
+    <graphicData>
+      <texPath>Things/Effigies/Effigy_Tzeentch</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>21</MarketValue>
+      <Flammability>1.0</Flammability>
+      <Mass>0.35</Mass>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0,200,200,0)</glowColor>
+      </li>
+      <li Class="Corruption.Core.Items.CompProperties_Empyreal">
+        <compClass>Corruption.Core.Items.CompEmpyreal</compClass>        
+        <GainRate>20.0</GainRate><!--GainRate>10.0</GainRate-->
+      </li>
+      <li Class="Corruption.Worship.CompProperties_Effigy">
+        <compClass>Corruption.Worship.CompEffigy</compClass>
+        <dedicatedTo>Tzeentch</dedicatedTo>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <thingClass>Corruption.Worship.ItemEffigy</thingClass>
+    <defName>Effigy_Slaanesh</defName>
+    <label>Curious effigy</label>
+    <description>A small item of worship. Looks like a hermaphrodite.</description>
+    <graphicData>
+      <texPath>Things/Effigies/Effigy_Slaanesh</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>21</MarketValue>
+      <Flammability>1.0</Flammability>
+      <Mass>0.35</Mass>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(200,0,0,200)</glowColor>
+      </li>
+      <li Class="Corruption.Core.Items.CompProperties_Empyreal">
+        <compClass>Corruption.Core.Items.CompEmpyreal</compClass>        
+        <GainRate>100.0</GainRate>
+      </li>
+      <li Class="Corruption.Worship.CompProperties_Effigy">
+        <compClass>Corruption.Worship.CompEffigy</compClass>
+        <dedicatedTo>Slaanesh</dedicatedTo>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+  <!--=============== Component ====================-->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>HumanSkull</defName>
+    <label>human skull</label>
+    <description>The cleaned skull of a human being.</description>
+    <graphicData>
+      <texPath>Things/Skeletons/HumanSkull</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Wood_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>10</stackLimit>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>0.5</MarketValue>
+      <Flammability>1.0</Flammability>
+      <Mass>0.35</Mass>
+    </statBases>
+    <intricate>false</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>HumanBones</defName>
+    <label>human bones</label>
+    <description>The cleaned bones of a human being.</description>
+    <graphicData>
+      <texPath>Things/Skeletons/HumanBones</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Wood_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>0.5</MarketValue>
+      <Flammability>1.0</Flammability>
+      <Mass>0.35</Mass>
+    </statBases>
+    <intricate>false</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+
+
+</Defs>

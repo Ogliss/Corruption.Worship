@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <Corruption.Core.CorruptionPawnKindDef Abstract="True" Name="ChaosChampion_Khorne" ParentName="CultistBase">
+    <defName>Chaos_Champion_Khorne</defName>
+    <label>champion of khorne</label>
+    <combatPower>100</combatPower>
+    <race>Human</race>
+    <defaultFactionType>PlayerColony_Chaos</defaultFactionType>
+    <chemicalAddictionChance>0.3</chemicalAddictionChance>
+    <apparelTags>
+      <li>ChaosBasic</li>
+      <li>ChaosMilitant</li>
+      <li>ChaosChampion</li>
+    </apparelTags>
+    <apparelMoney>900~2000</apparelMoney>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <techHediffsMoney>500~1500</techHediffsMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <weaponMoney>2000~5000</weaponMoney>
+    <combatEnhancingDrugsChance>1.0</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>4~8</combatEnhancingDrugsCount>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>Bladelink</li>
+    </weaponTags>
+    <techHediffsTags>
+      <li>Corrupted</li>
+    </techHediffsTags>
+    <techHediffsChance>0.02</techHediffsChance>
+    <forcedStartingTraits>
+      <li>KhorneChampion</li>
+    </forcedStartingTraits>
+    <affliction>
+      <startingPowers>
+      </startingPowers>
+      <useForcedPantheon>true</useForcedPantheon>
+      <forcedPantheon>Chaos</forcedPantheon>
+      <afflictionRange>0~500</afflictionRange>
+    </affliction>
+    <additionalTags>
+      <li>Biomancer</li>
+    </additionalTags>
+  </Corruption.Core.CorruptionPawnKindDef>
+
+  <Corruption.Core.CorruptionPawnKindDef Abstract="True" Name="ChaosChampion_Nurgle" ParentName="CultistBase">
+    <defName>Chaos_Champion_Nurgle</defName>
+    <label>champion of nurgle</label>
+    <combatPower>100</combatPower>
+    <race>Human</race>
+    <defaultFactionType>PlayerColony_Chaos</defaultFactionType>
+    <chemicalAddictionChance>0.3</chemicalAddictionChance>
+    <apparelTags>
+      <li>ChaosBasic</li>
+      <li>ChaosMilitant</li>
+      <li>ChaosChampion</li>
+    </apparelTags>
+    <apparelMoney>900~2000</apparelMoney>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <techHediffsMoney>500~1500</techHediffsMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <weaponMoney>2000~5000</weaponMoney>
+    <combatEnhancingDrugsChance>1.0</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>4~8</combatEnhancingDrugsCount>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>Bladelink</li>
+    </weaponTags>
+    <techHediffsTags>
+      <li>Corrupted</li>
+    </techHediffsTags>
+    <techHediffsChance>0.02</techHediffsChance>
+    <forcedStartingTraits>
+      <li>NurgleChampion</li>
+    </forcedStartingTraits>
+    <affliction>
+      <startingPowers>
+      </startingPowers>
+      <useForcedPantheon>true</useForcedPantheon>
+      <forcedPantheon>Chaos</forcedPantheon>
+      <afflictionRange>0~500</afflictionRange>
+    </affliction>
+    <additionalTags>
+      <li>Biomancer</li>
+    </additionalTags>
+  </Corruption.Core.CorruptionPawnKindDef>
+
+  <Corruption.Core.CorruptionPawnKindDef Abstract="True" Name="ChaosChampion_Tzeentch" ParentName="CultistBase">
+    <defName>Chaos_Champion_Tzeentch</defName>
+    <label>champion of tzeentch</label>
+    <combatPower>100</combatPower>
+    <race>Human</race>
+    <defaultFactionType>PlayerColony_Chaos</defaultFactionType>
+    <chemicalAddictionChance>0.3</chemicalAddictionChance>
+    <apparelTags>
+      <li>ChaosBasic</li>
+      <li>ChaosMilitant</li>
+      <li>ChaosChampion</li>
+    </apparelTags>
+    <apparelMoney>900~2000</apparelMoney>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <techHediffsMoney>500~1500</techHediffsMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <weaponMoney>2000~5000</weaponMoney>
+    <combatEnhancingDrugsChance>1.0</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>4~8</combatEnhancingDrugsCount>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>Bladelink</li>
+    </weaponTags>
+    <techHediffsTags>
+      <li>Corrupted</li>
+    </techHediffsTags>
+    <techHediffsChance>0.02</techHediffsChance>
+    <forcedStartingTraits>
+      <li>TzeentchChampion</li>
+    </forcedStartingTraits>
+    <affliction>
+      <startingPowers>
+      </startingPowers>
+      <useForcedPantheon>true</useForcedPantheon>
+      <forcedPantheon>Chaos</forcedPantheon>
+      <afflictionRange>0~500</afflictionRange>
+    </affliction>
+    <additionalTags>
+      <li>Biomancer</li>
+    </additionalTags>
+  </Corruption.Core.CorruptionPawnKindDef>
+
+  <Corruption.Core.CorruptionPawnKindDef Abstract="True" Name="ChaosChampion_Slaanesh" ParentName="CultistBase">
+    <defName>Chaos_Champion_Slaanesh</defName>
+    <label>champion of slaanesh</label>
+    <combatPower>100</combatPower>
+    <race>Human</race>
+    <defaultFactionType>PlayerColony_Chaos</defaultFactionType>
+    <chemicalAddictionChance>0.3</chemicalAddictionChance>
+    <apparelTags>
+      <li>ChaosBasic</li>
+      <li>ChaosMilitant</li>
+      <li>ChaosChampion</li>
+    </apparelTags>
+    <apparelMoney>900~2000</apparelMoney>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <techHediffsMoney>500~1500</techHediffsMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <weaponMoney>2000~5000</weaponMoney>
+    <combatEnhancingDrugsChance>1.0</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>4~8</combatEnhancingDrugsCount>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>Bladelink</li>
+    </weaponTags>
+    <techHediffsTags>
+      <li>Corrupted</li>
+    </techHediffsTags>
+    <techHediffsChance>0.02</techHediffsChance>
+    <forcedStartingTraits>
+      <li>SlaaneshChampion</li>
+    </forcedStartingTraits>
+    <affliction>
+      <startingPowers>
+      </startingPowers>
+      <useForcedPantheon>true</useForcedPantheon>
+      <forcedPantheon>Chaos</forcedPantheon>
+      <afflictionRange>0~500</afflictionRange>
+    </affliction>
+    <additionalTags>
+      <li>Biomancer</li>
+    </additionalTags>
+  </Corruption.Core.CorruptionPawnKindDef>
+  
+</Defs>

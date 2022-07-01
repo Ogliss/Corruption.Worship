@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Defs>
-  <Corrupion.Worship.CorruptionMainTabDef>
-    <defName>WorshipTab</defName>
-    <label>worship</label>
-    <MainTabWindowType>Corruption.Worship.MainTabWindow_Worship</MainTabWindowType>
-  </Corrupion.Worship.CorruptionMainTabDef>
-</Defs>

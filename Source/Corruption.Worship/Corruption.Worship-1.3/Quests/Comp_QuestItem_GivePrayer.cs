@@ -14,7 +14,7 @@ namespace Corruption.Worship.Quests
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
         {
             Job job = null;
-            job = JobMaker.MakeJob(WorshipJobDefOf.PrayAtPilgrimage);
+            job = JobMaker.MakeJob(WorshipJobDefOf.Corruption_PrayAtPilgrimage);
             job.targetA = this.parent.InteractionCell;
             job.targetB = this.parent;
 

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <Corruption.Worship.Wonders.WonderDef Abstract="True" Name="YnneadWonder">
+    <associatedGods>
+      <li MayRequire="Ogliss.AdMech.Xenobiologis.Eldar">Ynnead</li>
+    </associatedGods>
+  </Corruption.Worship.Wonders.WonderDef>
+  
+  <Corruption.Worship.Wonders.WonderDef Abstract="True" Name="CegorachWonder">
+    <associatedGods>
+      <li MayRequire="Ogliss.AdMech.Xenobiologis.Eldar">Cegorach</li>
+    </associatedGods>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef Abstract="True" Name="KhaineWonder">
+    <associatedGods>
+      <li MayRequire="Ogliss.AdMech.Xenobiologis.Eldar">Khaine</li>
+    </associatedGods>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef ParentName="YnneadWonder" MayRequire="Ogliss.AdMech.Xenobiologis.Eldar">
+    <defName>EldarGatherSoulstones</defName>
+    <label>Collector's Call</label>
+    <description>Call for the collection of soulstones that you harbour. They will be placed in an infinity circuit and increase the power of Ynnead.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_FireIncident</workerClass>
+    <wonderIconPath>UI/Wonders/WondersEldarCollectors</wonderIconPath>
+    <favourCost>0</favourCost>
+    <incident>RaidFriendly</incident>
+    <pointsScalable>False</pointsScalable>
+    <fixedIncidentPoints>500</fixedIncidentPoints>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef ParentName="CegorachWonder" MayRequire="Ogliss.AdMech.Xenobiologis.Eldar">
+    <defName>EldarHostHarlequins</defName>
+    <label>Host the Harlequins</label>
+    <description>Call for a troupe of Harlequins to visit you and perform their art to please Cegorach.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_FireIncident</workerClass>
+    <wonderIconPath>UI/Wonders/WondersEldarTroupe</wonderIconPath>
+    <favourCost>0</favourCost>
+    <incident>RaidFriendly</incident>
+    <pointsScalable>False</pointsScalable>
+    <fixedIncidentPoints>500</fixedIncidentPoints>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef ParentName="KhaineWonder" MayRequire="Ogliss.AdMech.Xenobiologis.Eldar">
+    <defName>EldarKhaineBloodlust</defName>
+    <label>Homage to Khaine</label>
+    <description>Allow a single Eldar to briefly give in to Khaine's bloodlust, gaining the favour of the Red Handed God. Risks drawing the wrong attention.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_StartMentalState</workerClass>
+    <wonderIconPath>UI/Wonders/WondersEldarBloodlust</wonderIconPath>
+    <favourCost>0</favourCost>
+    <mentalStateToStart>Berserk</mentalStateToStart>
+    <yieldFavour>500</yieldFavour>
+  </Corruption.Worship.Wonders.WonderDef>
+
+
+
+  <Corruption.Worship.Wonders.WonderDef ParentName="YnneadWonder">
+    <defName>YnneadChosen</defName>
+    <label>Prophet of Ynnead</label>
+    <description>The selected Eldar becomes a prophet of Ynnead to other Aeldari.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_AddSpecialTrait</workerClass>
+    <wonderIconPath>UI/Wonders/WondersEldarYnnead</wonderIconPath>
+    <favourCost>10000</favourCost>
+    <traitToGive>YnneadChosen</traitToGive>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef ParentName="CegorachWonder">
+    <defName>CegorachChosen</defName>
+    <label>Puppeteer of Cegorach</label>
+    <description>The selected Eldar becomes a favourite of the Laughing God.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_AddSpecialTrait</workerClass>
+    <wonderIconPath>UI/Wonders/WondersEldarCegorach</wonderIconPath>
+    <favourCost>10000</favourCost>
+    <traitToGive>CegorachChosen</traitToGive>
+  </Corruption.Worship.Wonders.WonderDef>
+
+  <Corruption.Worship.Wonders.WonderDef ParentName="KhaineWonder">
+    <defName>KhaineChosen</defName>
+    <label>Scion of Khaine</label>
+    <description>The selected Eldar is lost on the Path of the Warrior, forever locked into battling the enemies of the Aeldari.</description>
+    <workerClass>Corruption.Worship.Wonders.WonderWorker_AddSpecialTrait</workerClass>
+    <wonderIconPath>UI/Wonders/WondersEldarKhaine</wonderIconPath>
+    <favourCost>10000</favourCost>
+    <traitToGive>KhaineChosen</traitToGive>
+  </Corruption.Worship.Wonders.WonderDef>
+
+</Defs>

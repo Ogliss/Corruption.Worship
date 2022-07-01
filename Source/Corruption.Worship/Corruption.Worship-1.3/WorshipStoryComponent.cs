@@ -23,6 +23,20 @@ namespace Corruption.Worship
 
         private DefMap<PantheonDef, GlobalPantheonFollowers> tmpCachedFollowers;
 
+        public HashSet<ThingDef> cachedPossibleBuildings = new HashSet<ThingDef>();
+        public void CachePossibleAltars()
+        {
+            this.cachedPossibleBuildings.Clear();
+            List<ThingDef> defs = DefDatabase<ThingDef>.AllDefsListForReading.FindAll(x=> x.isAltar);
+            for (int i = 0; i < defs.Count; i++)
+            {
+                if (defs[i].thingClass == typeof(BuildingAltar))
+                {
+                    this.cachedPossibleBuildings.Add(defs[i]);
+                }
+            }
+        }
+
         public override void Notify_PawnCorrupted(CompSoul soul)
         {
         }

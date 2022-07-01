@@ -1,4 +1,5 @@
 ﻿using Corruption.Core.Gods;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using Verse;
 
 namespace Corruption.Worship
 {
-    public class SermonTemplate : Ritual
+    public class SermonTemplate : Sermon
     {
         public string Name = "";
 
@@ -36,7 +37,7 @@ namespace Corruption.Worship
 
         public float SermonDurationHours = 0.5f;
 
-        public SermonTemplate() : base(RitualDefOf.Sermon)
+        public SermonTemplate() : base(WorshipRitualDefOf.Corruption_Sermon)
         {
         }
 
