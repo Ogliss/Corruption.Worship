@@ -61,7 +61,6 @@ namespace Corruption.Worship
             Scribe_Values.Look<int>(ref preferredStartTime, "preferredStartTime");
             Scribe_Values.Look<float>(ref Length, "Length");
             Scribe_Values.Look<bool>(ref Active, "Active");
-            Scribe_Values.Look<bool>(ref Active, "Active");
             Scribe_Defs.Look<GodDef>(ref this.DedicatedTo, "DedicatedTo");
             Scribe_References.Look<Pawn>(ref this.Preacher, "Preacher");
             Scribe_References.Look<Pawn>(ref this.Assistant, "Assistant");
