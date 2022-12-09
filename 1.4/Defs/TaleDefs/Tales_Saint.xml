@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaleDef>
+    <defName>TraitProgressionTale</defName>
+    <taleClass>Corruption.Worship.Tale_TraitProgression</taleClass>
+    <type>PermanentHistorical</type>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s calling</li>
+        <li>image->[PAWN_nameFull] looking to the heavens [circumstance_group]</li>
+        <li>image->[PAWN_nameFull] falling to [PAWN_possessive] knees [circumstance_group]</li>
+        <li>image->[PAWN_nameFull] on [PAWN_possessive] knees, basked in light [circumstance_group]</li>
+        <li>circumstance_phrase->while looking in awe</li>
+        <li>circumstance_phrase->while looking fearful</li>
+        <li>circumstance_phrase->as others look on</li>
+        <li>desc_sentence->[PAWN_pronoun] seems totally unaware of what is around [PAWN_objective].</li>
+        <li>desc_sentence->[PAWN_possessive] body itself seems to be glowing.</li>
+        <li>desc_sentence->[PAWN_pronoun] is nearly unconscious, [PAWN_possessive] tongue lolling out, drool dripping.</li>
+        <li>desc_sentence->[PAWN_pronoun] seems to be crying in relief.</li>
+        <li>desc_sentence->[PAWN_pronoun] is surrounded by an artistically rendered halo.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>BecomeAspiringSaint</defName>
+    <label>aspiring saint's calling</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>PermanentHistorical</type>
+    <baseInterest>20</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s calling</li>
+        <li>image->[PAWN_nameFull] looking to the heavens [circumstance_group]</li>
+        <li>image->[PAWN_nameFull] falling to [PAWN_possessive] knees [circumstance_group]</li>
+        <li>image->[PAWN_nameFull] on [PAWN_possessive] knees, basked in light [circumstance_group]</li>
+        <li>circumstance_phrase->while looking in awe</li>
+        <li>circumstance_phrase->while looking fearful</li>
+        <li>circumstance_phrase->as others look on</li>
+        <li>desc_sentence->[PAWN_pronoun] seems totally unaware of what is around [PAWN_objective].</li>
+        <li>desc_sentence->[PAWN_possessive] body itself seems to be glowing.</li>
+        <li>desc_sentence->[PAWN_pronoun] is nearly unconscious, [PAWN_possessive] tongue lolling out, drool dripping.</li>
+        <li>desc_sentence->[PAWN_pronoun] seems to be crying in relief.</li>
+        <li>desc_sentence->[PAWN_pronoun] is surrounded by an artistically rendered halo.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <TaleDef>
+    <defName>BecomeChampion</defName>
+    <label>aspiring champion's calling</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>PermanentHistorical</type>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s calling</li>
+        <li>image->[PAWN_nameFull] looking to the heavens [circumstance_group]</li>
+        <li>image->[PAWN_nameFull] falling to [PAWN_possessive] knees [circumstance_group]</li>
+        <li>image->[PAWN_nameFull] basked in a pulsating glow [circumstance_group]</li>
+        <li>circumstance_phrase->while looking in grim silence</li>
+        <li>circumstance_phrase->while looking triumphant</li>
+        <li>circumstance_phrase->while baring sharpened teeth</li>
+        <li>circumstance_phrase->as others look on</li>
+        <li>desc_sentence->[PAWN_pronoun] seems totally unaware of what is around [PAWN_objective].</li>
+        <li>desc_sentence->[PAWN_possessive] body itself seems to be burning.</li>
+        <li>desc_sentence->[PAWN_possessive] body itself seems to be mutating.</li>
+        <li>desc_sentence->[PAWN_pronoun] is screaming.</li>
+        <li>desc_sentence->[PAWN_pronoun] is surrounded by cackling lightning.</li>
+        <li>desc_sentence->[PAWN_pronoun] is surrounded by writhing warpfire.</li>
+        <li>desc_sentence->[PAWN_pronoun] is surrounded by smore and flames.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <TaleDef>
+    <defName>SaintFindsRelic</defName>
+    <label>saint finds relic</label>
+    <taleClass>Tale_SinglePawnAndThing</taleClass>
+    <type>PermanentHistorical</type>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s discovery</li>
+        <li>image->[PAWN_nameFull] looking at [THING_label] [circumstance_group]</li>
+        <li>image->[PAWN_nameFull] on [PAWN_possessive] knees, basked in light [circumstance_group]</li>
+        <li>circumstance_phrase->while looking in contemplation</li>
+        <li>circumstance_phrase->while looking relieved</li>
+        <li>circumstance_phrase->while looking vindicated</li>
+        <li>circumstance_phrase->as others look on</li>        
+        <li>desc_sentence->[PAWN_possessive] body itself seems to be glowing.</li>
+        <li>desc_sentence->[PAWN_pronoun] seems to be crying in relief.</li>
+        <li>desc_sentence->[PAWN_pronoun] is surrounded by an artistically rendered halo.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>AspiringSaintWonDuel</defName>
+    <label>saint wins duel</label>
+    <taleClass>Tale_DoublePawn</taleClass>
+    <type>PermanentHistorical</type>
+    <firstPawnSymbol>VICTIM</firstPawnSymbol>
+    <secondPawnSymbol>KILLER</secondPawnSymbol>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <!-- note that killer may not be filled in, so this has to be resolvable without any killer_ symbols -->
+        <li>tale_noun->[KILLER_nameDef] defeating [VICTIM_nameDef]</li>
+        <li>tale_noun->[VICTIM_nameDef] being defeated by [KILLER_nameDef]</li>
+        <li>tale_noun->the defeat of [VICTIM_nameDef] by [KILLER_nameDef]</li>
+        <li>tale_noun->the defeat of [VICTIM_nameDef]</li>
+        <li>image->[VICTIM_nameFull] being defeated by [KILLER_nameFull] [circumstance_group]</li>
+        <li>image->[KILLER_nameFull] defeating [VICTIM_nameFull] [circumstance_group]</li>
+        <li>image->[KILLER_nameFull] ending [VICTIM_nameFull]'s life [circumstance_group]</li>
+        <li>circumstance_phrase->with rigtheous indignation</li>
+        <li>circumstance_phrase->with cold fury</li>
+        <li>circumstance_phrase->with passionate rage</li>
+        <li>circumstance_phrase->while basked in light</li>
+        <li>circumstance_phrase->with a faint halo around [KILLER_nameFull]'s head</li>
+        <li>desc_sentence->The sun is setting behind them in a symbolic echo of the event.</li>
+        <li>desc_sentence->[Quantity_adjphrase] [Animal]s look on.</li>
+        <li>desc_sentence->A [PersonJob] watches silently [side_position].</li>
+        <li>desc_sentence->Blood is pooling around [VICTIM_nameDef]'s body.</li>
+        <li>desc_sentence->[VICTIM_nameDef]'s eyes are rendered in a realistically lifeless fashion.</li>
+        <li>desc_sentence->[KILLER_nameDef] is baring [KILLER_possessive] teeth.</li>
+        <li>desc_sentence->[KILLER_nameDef] seems emboldened.</li>
+        <li>desc_sentence->[KILLER_nameDef] looks triumphant.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  
+</Defs>

@@ -90,10 +90,14 @@
       "Lib.Harmony/2.2.1": {
         "type": "package",
         "compile": {
-          "lib/net472/0Harmony.dll": {}
+          "lib/net472/0Harmony.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net472/0Harmony.dll": {}
+          "lib/net472/0Harmony.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Build.Framework/15.1.548": {
@@ -108,10 +112,14 @@
           "System.Threading.Thread": "4.0.0"
         },
         "compile": {
-          "lib/net46/_._": {}
+          "lib/net46/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net46/_._": {}
+          "lib/net46/_._": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Build.Utilities.Core/15.1.548": {
@@ -120,10 +128,14 @@
           "Microsoft.Build.Framework": "[15.1.548]"
         },
         "compile": {
-          "lib/net46/_._": {}
+          "lib/net46/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net46/_._": {}
+          "lib/net46/_._": {
+            "related": ".xml"
+          }
         }
       },
       "System.Collections/4.0.11": {
@@ -897,8 +909,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -909,9 +920,6 @@
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Corruption.Worship\\Source\\Corruption.Worship\\Corruption.Worship-1.3\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -921,7 +929,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Downloads\\KrafsLocal": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -959,7 +966,7 @@
             "version": "[1.0.3, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

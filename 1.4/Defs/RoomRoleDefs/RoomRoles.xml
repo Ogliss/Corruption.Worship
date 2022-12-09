@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RoomRoleDef>
+    <defName>PlaceOfWorship</defName>
+    <label>place of worship</label>
+    <workerClass>Corruption.Worship.RoomRoleWorker_PlaceOfWorship</workerClass>
+  </RoomRoleDef>
+  
+</Defs>

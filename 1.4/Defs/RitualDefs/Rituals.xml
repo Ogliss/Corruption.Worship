@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <Corruption.Worship.RitualDef>
+    <defName>Corruption_Sermon</defName>
+    <ritualClass>Corruption.Worship.RitualWorker_Sermon</ritualClass>
+  </Corruption.Worship.RitualDef>
+
+  
+  <PreceptDef ParentName="SpeechPreceptBase">
+    <defName>Corruption_Sermon</defName>
+    <label>sermon</label>
+    <description>Initiate a sermon from the altar. {ORGANIZER_labelShort} will go to {ORGANIZER_possessive} altar and call all colonists to listen to a sermon there. If all goes well, listeners will feel inspired, and gain respect for {ORGANIZER_labelShort}. If it goes poorly, the sermon will do social damage. The outcome depends on {ORGANIZER_labelShort}'s social abilities.</description>
+    <ritualPatternBase>Corruption_Sermon</ritualPatternBase>
+    <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+    <classic>true</classic>
+    <ignoreNameUniqueness>true</ignoreNameUniqueness>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+  </PreceptDef>
+  
+  <RitualPatternDef ParentName="SpeechPatternBase">
+    <defName>Corruption_Sermon</defName>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>Corruption_Sermon</ritualBehavior>
+    <ritualTargetFilter>Corruption_CorrospondingAltar</ritualTargetFilter>
+    <playsIdeoMusic>false</playsIdeoMusic>
+  </RitualPatternDef>
+
+  <RitualBehaviorDef>
+    <defName>Corruption_Sermon</defName>
+    <workerClass>Corruption.Worship.RitualBehaviorWorker_Sermon</workerClass>
+    <durationTicks>5000</durationTicks>
+    <letterTitle>Sermon from the altar</letterTitle>
+    <letterText>{ORGANIZER_labelShort} is giving a Sermon from the altar.
+\nIf all goes well, listeners will feel inspired, and gain respect for {ORGANIZER_labelShort}. If it goes poorly, the Sermon will do social damage. The outcome depends on {ORGANIZER_labelShort}'s social abilities.</letterText>
+    <roles>
+      <li Class="RitualRoleOrganizer">
+        <label>organizer</label>
+        <id>speaker</id>
+        <maxCount>1</maxCount>
+      </li>
+    </roles>
+    <stages>
+      <li Class="Corruption.Worship.RitualStage_AtTheAltar">
+        <defaultDuty>Spectate</defaultDuty>
+        <spectatorsRequired>true</spectatorsRequired>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1.0</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>speaker</roleId>
+            <dutyDef>GiveSpeech</dutyDef>
+          </li>
+        </roleBehaviors>
+        <visualEffectDef>Speech</visualEffectDef>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualTargetFilterDef>
+    <defName>Corruption_CorrospondingAltar</defName>
+    <workerClass>Corruption.Worship.RitualTargetFilter_Altar</workerClass>
+  </RitualTargetFilterDef>
+
+  <RitualVisualEffectDef>
+    <defName>Corruption_Sermon</defName>
+    <comps>
+      <li Class="CompProperties_RitualEffectSpawnOnPawn">
+        <fleckDef>SpeechLines</fleckDef>
+        <compClass>CompRitualEffect_SpawnOnOrganizer</compClass>
+        <requiredTag>Arrived</requiredTag>
+        <eastRotationOffset>(0.5, 0, 0.2)</eastRotationOffset>
+        <westRotationOffset>(-0.5, 0, 0.2)</westRotationOffset>
+        <northRotationOffset>(0, 0, 0.5)</northRotationOffset>
+        <spawnIntervalTicks>45</spawnIntervalTicks>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+  
+  <RitualOutcomeEffectDef>
+    <defName>Corruption_AttendSermon</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>Corruption.Worship.RitualOutcomeEffectWorker_Sermon</workerClass>
+    <comps>
+      <li Class="RitualOutcomeComp_PawnStatScaled">
+        <label>{PAWN_labelShort}'s social impact</label>
+        <labelAbstract>speaker's social impact</labelAbstract>
+        <roleId>speaker</roleId>
+        <statDef>SocialImpact</statDef>
+        <curve>
+          <points>
+            <li>(0.2, 0.0)</li>
+            <li>(0.6, 0.2)</li>
+            <li>(1.0, 0.3)</li>
+            <li>(1.5, 0.4)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.07)</li>
+            <li>(4,  0.22)</li>
+            <li>(7,  0.33)</li>
+            <li>(10, 0.4)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label>
+        <statDef>Impressiveness</statDef>
+        <curve>
+          <points>
+            <li>0,  0</li>
+            <li>50,  0.1</li>
+            <li>120, 0.2</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleSpeech</memory>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Uninspiring</label>
+        <chance>0.15</chance>
+        <memory>UninspiringSpeech</memory>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Encouraging</label>
+        <chance>0.6</chance>
+        <memory>EncouragingSpeech</memory>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Inspirational</label>
+        <chance>0.2</chance>
+        <memory>InspirationalSpeech</memory>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+  
+</Defs>

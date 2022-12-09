@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <Corruption.Core.CorruptionPawnKindDef ParentName="ChaosChampion_Khorne">
+    <defName>Chaos_Champion_Khorne</defName>
+	<initialWillRange>3~5</initialWillRange>
+	<initialResistanceRange>17~27</initialResistanceRange>
+  </Corruption.Core.CorruptionPawnKindDef>
+
+  <Corruption.Core.CorruptionPawnKindDef ParentName="ChaosChampion_Nurgle">
+    <defName>Chaos_Champion_Nurgle</defName>
+	<initialWillRange>3~5</initialWillRange>
+	<initialResistanceRange>17~27</initialResistanceRange>
+  </Corruption.Core.CorruptionPawnKindDef>
+
+  <Corruption.Core.CorruptionPawnKindDef ParentName="ChaosChampion_Tzeentch">
+    <defName>Chaos_Champion_Tzeentch</defName>
+	<initialWillRange>3~5</initialWillRange>
+	<initialResistanceRange>17~27</initialResistanceRange>
+  </Corruption.Core.CorruptionPawnKindDef>
+
+  <Corruption.Core.CorruptionPawnKindDef ParentName="ChaosChampion_Slaanesh">
+    <defName>Chaos_Champion_Slaanesh</defName>
+	<initialWillRange>3~5</initialWillRange>
+	<initialResistanceRange>17~27</initialResistanceRange>
+  </Corruption.Core.CorruptionPawnKindDef>
+  
+</Defs>

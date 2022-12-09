@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GatheringDef>
+    <defName>Corruption_Sermon</defName>
+    <label>Sermon</label>
+    <randomSelectionWeight>0</randomSelectionWeight>
+    <letterTitle>Sermon</letterTitle>
+    <letterText>{ORGANIZER_labelShort} is holding a sermon from an altar! 
+      \nIf all goes well, listeners will feel inspired, and gain favour of the god the sermon is dedicated to. If it goes poorly, the sermon will have no effect. The outcome depends on {ORGANIZER_labelShort}'s social abilities. </letterText>
+    <calledOffMessage>The sermon has been cancelled.</calledOffMessage>
+    <finishedMessage>The sermon has concluded.</finishedMessage>
+    <duty>Corruption_AttendSermon</duty>
+    <workerClass>Corruption.Worship.GatheringWorker_Sermon</workerClass>
+    <!--requiredTitleAny>
+      <li>Knight</li>
+      <li>Praetor</li>
+      <li>Baron</li>
+      <li>Count</li>
+    </requiredTitleAny-->
+    <gatherSpotDefs>
+      <li>Corruption_AltarSimple</li>
+      <li>Corruption_AltarIntricate</li>
+    </gatherSpotDefs>
+  </GatheringDef>
+  
+  <!--GatheringDef>
+    <defName>Corruption_Sermon</defName>
+    <label>Sermon</label>
+    <randomSelectionWeight>0</randomSelectionWeight>
+    <letterTitle>Sermon</letterTitle>
+    <letterText>
+      {ORGANIZER_labelShort} is holding a sermon from the altar.
+      \nIf all goes well, listeners will feel inspired, and gain favour of the god the sermon is dedicated to. If it goes poorly, the sermon will have no effect. The outcome depends on {ORGANIZER_labelShort}'s social abilities.
+    </letterText>
+    <workerClass>Corruption.Worship.GatheringWorker_Sermon</workerClass>
+    <duty>Corruption_AttendSermon</duty>
+    <respectTimetable>False</respectTimetable>
+    <gatherSpotDefs>
+      <li>Corruption_AltarSimple</li>
+      <li>Corruption_AltarIntricate</li>
+    </gatherSpotDefs>
+  </GatheringDef-->
+
+</Defs>

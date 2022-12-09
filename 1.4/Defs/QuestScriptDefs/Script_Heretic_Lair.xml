@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>Mission_Pilgrimage_HereticLair</defName>
+    <rootMinPoints>0</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <isRootSpecial>false</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[way] [preposition] [concept]</li>
+
+
+        <li>preposition->of</li>
+        <li>preposition->to</li>
+
+        <li>way->Path</li>
+        <li>way->Thread</li>
+        <li>way->Walk</li>
+        <li>way->Trail</li>
+        <li>way->Route</li>
+        <li>way->Way</li>
+
+        <li>concept->Vengeance</li>
+        <li>concept->Repentance</li>
+        <li>concept->Redemption</li>
+        <li>concept->Fury</li>
+        <li>concept->Despair</li>
+        <li>concept->the witch</li>
+
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+
+        <li>questDescription->One of your pawns received a vision of a nearby location where heretics have gathered. Send out your warriors of faith to destroy this den of corruption.\n</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+
+        <!-- Imperial site -->
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <sitePartsTags>
+            <li>
+              <tag>Outpost</tag>
+            </li>
+            <li>
+              <tag>ItemStash</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>Chaos_NPC</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>favour</name>
+          <value>$sitePartsParams.threatPoints</value>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <siteFaction>Chaos_NPC</siteFaction>
+          </parms>
+        </li>
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <!-- Site expires -->
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(60*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">Whatever vision your pawns may have head, the moment to act upon it has faded.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node  Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterHereticPurgeFinished">Quest completed</label>
+                <letterDef>PositiveEvent</letterDef>
+                <text TKey="LetterTextHereticPurgeFinished">You have successfully completed the quest '[resolvedQuestName]'!\n\nYou have burned down the lair of heretics that threatened your faithful colony. You have gained [favour] favour from the [godName].</text>
+              </li>
+              <li Class="Corruption.Worship.Quests.QuestNode_AwardFavour">
+                <favourToGain>$favour</favourToGain>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Success</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+      </nodes>
+
+    </root>
+
+  </QuestScriptDef>
+
+</Defs>
